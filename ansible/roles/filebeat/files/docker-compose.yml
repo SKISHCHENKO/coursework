@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.13.4
+    user: root
+    command: ["--strict.perms=false"]
+    volumes:
+      - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/log/nginx:/var/log/nginx:ro
+    network_mode: host

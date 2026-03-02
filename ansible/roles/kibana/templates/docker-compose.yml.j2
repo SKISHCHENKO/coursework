@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.13.4
+    environment:
+      - ELASTICSEARCH_HOSTS=http://{{ elasticsearch_host }}:{{ elasticsearch_port }}
+      - XPACK_SECURITY_ENABLED=false
+    ports:
+      - "5601:5601"

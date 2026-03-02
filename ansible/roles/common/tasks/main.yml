@@ -1,0 +1,12 @@
+---
+- name: Install base packages
+  ansible.builtin.apt:
+    name:
+      - curl
+      - vim
+      - ca-certificates
+      - gnupg
+      - jq
+      - unzip
+    update_cache: true
+    state: present

@@ -1,0 +1,26 @@
+---
+# Рекомендовано: docker-контейнер (если проблемы со скачиванием Elastic).
+- name: Install docker
+  ansible.builtin.apt:
+    name:
+      - docker.io
+      - docker-compose
+    state: present
+    update_cache: true
+
+- name: Create elastic directory
+  ansible.builtin.file:
+    path: /opt/elastic
+    state: directory
+    mode: "0755"
+
+- name: Deploy docker-compose.yml for Elasticsearch
+  ansible.builtin.copy:
+    src: docker-compose.yml
+    dest: /opt/elastic/docker-compose.yml
+    mode: "0644"
+
+- name: Start Elasticsearch container
+  ansible.builtin.command:
+    cmd: docker-compose up -d
+    chdir: /opt/elastic

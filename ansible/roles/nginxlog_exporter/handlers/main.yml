@@ -1,0 +1,6 @@
+---
+- name: Restart nginxlog_exporter
+  ansible.builtin.systemd:
+    name: nginxlog_exporter
+    state: restarted
+    daemon_reload: true

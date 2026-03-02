@@ -1,0 +1,32 @@
+---
+# Упрощённый вариант: Filebeat через docker (чтобы не зависеть от репозиториев Elastic).
+- name: Install docker
+  ansible.builtin.apt:
+    name:
+      - docker.io
+      - docker-compose
+    state: present
+    update_cache: true
+
+- name: Create filebeat directory
+  ansible.builtin.file:
+    path: /opt/filebeat
+    state: directory
+    mode: "0755"
+
+- name: Deploy filebeat.yml
+  ansible.builtin.template:
+    src: filebeat.yml.j2
+    dest: /opt/filebeat/filebeat.yml
+    mode: "0644"
+
+- name: Deploy docker-compose.yml
+  ansible.builtin.copy:
+    src: docker-compose.yml
+    dest: /opt/filebeat/docker-compose.yml
+    mode: "0644"
+
+- name: Start filebeat
+  ansible.builtin.command:
+    cmd: docker-compose up -d
+    chdir: /opt/filebeat

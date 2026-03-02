@@ -1,0 +1,27 @@
+---
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: true
+
+- name: Deploy static site
+  ansible.builtin.copy:
+    src: site/
+    dest: /var/www/html/
+    owner: www-data
+    group: www-data
+    mode: "0644"
+
+- name: Deploy nginx default site config
+  ansible.builtin.template:
+    src: default.conf.j2
+    dest: /etc/nginx/sites-available/default
+    mode: "0644"
+  notify: Reload nginx
+
+- name: Enable and start nginx
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true

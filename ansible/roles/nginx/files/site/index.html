@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>HA Site</title>
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;margin:40px}
+    code{background:#f2f2f2;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <h1>Сайт работает ✅</h1>
+  <p>Эта страница раздаётся nginx.</p>
+  <p>Hostname: <code id="hn">unknown</code></p>
+  <script>
+    // hostname можно увидеть и без JS, но оставим простую заглушку
+    document.getElementById('hn').textContent = window.location.host;
+  </script>
+</body>
+</html>

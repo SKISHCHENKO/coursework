@@ -1,0 +1,25 @@
+---
+- name: Install docker
+  ansible.builtin.apt:
+    name:
+      - docker.io
+      - docker-compose
+    state: present
+    update_cache: true
+
+- name: Create kibana directory
+  ansible.builtin.file:
+    path: /opt/kibana
+    state: directory
+    mode: "0755"
+
+- name: Deploy docker-compose.yml for Kibana
+  ansible.builtin.template:
+    src: docker-compose.yml.j2
+    dest: /opt/kibana/docker-compose.yml
+    mode: "0644"
+
+- name: Start Kibana container
+  ansible.builtin.command:
+    cmd: docker-compose up -d
+    chdir: /opt/kibana

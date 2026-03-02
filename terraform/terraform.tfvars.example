@@ -1,0 +1,21 @@
+cloud_id          = "xxxxxxx"
+folder_id         = "yyyyyyy"
+default_zone      = "ru-central1-a"
+zones             = ["ru-central1-a", "ru-central1-b"]
+
+vpc_name          = "ha-vpc"
+public_cidr       = "10.10.0.0/24"
+private_cidrs = {
+  "ru-central1-a" = "10.20.0.0/24"
+  "ru-central1-b" = "10.21.0.0/24"
+}
+
+ssh_user          = "ubuntu"
+ssh_public_key    = "ssh-ed25519 AAAA... user@pc"
+image_id          = "fd8************"  # Ubuntu 22.04 image id
+disk_size_gb      = 20
+
+allowed_admin_cidr = "1.2.3.4/32" # ваш IP
+
+node_exporter_port     = 9100
+nginxlog_exporter_port = 4040

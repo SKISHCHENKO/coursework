@@ -1,0 +1,22 @@
+[bastion]
+bastion ansible_host=<BASTION_PUBLIC_IP> ansible_user=ubuntu
+
+[web]
+web_a ansible_host=<WEB_A_PRIVATE_IP> ansible_user=ubuntu
+web_b ansible_host=<WEB_B_PRIVATE_IP> ansible_user=ubuntu
+
+[prometheus]
+prom ansible_host=<PROM_PRIVATE_IP> ansible_user=ubuntu
+
+[grafana]
+grafana ansible_host=<GRAFANA_PUBLIC_IP> ansible_user=ubuntu
+
+[elasticsearch]
+es ansible_host=<ES_PRIVATE_IP> ansible_user=ubuntu
+
+[kibana]
+kibana ansible_host=<KIBANA_PUBLIC_IP> ansible_user=ubuntu
+
+# Проксирование SSH через bastion
+[all:vars]
+ansible_ssh_common_args='-o ProxyJump=ubuntu@<BASTION_PUBLIC_IP>'

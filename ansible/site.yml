@@ -1,0 +1,39 @@
+---
+- name: Common base (packages, users)
+  hosts: all
+  become: true
+  roles:
+    - common
+
+- name: Web servers (nginx + exporters + filebeat)
+  hosts: web
+  become: true
+  roles:
+    - nginx
+    - node_exporter
+    - nginxlog_exporter
+    - filebeat
+
+- name: Prometheus
+  hosts: prometheus
+  become: true
+  roles:
+    - prometheus
+
+- name: Grafana
+  hosts: grafana
+  become: true
+  roles:
+    - grafana
+
+- name: Elasticsearch
+  hosts: elasticsearch
+  become: true
+  roles:
+    - elasticsearch
+
+- name: Kibana
+  hosts: kibana
+  become: true
+  roles:
+    - kibana
