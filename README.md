@@ -46,9 +46,6 @@ ansible-playbook -i inventory.ini site.yml
 В YandexCloud появилась сети с подсетями и ВМ:
 ![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen2_1.jpg)
 
-В YandexCloud появилась сети с подсетями и ВМ:
-![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen2_1.jpg)
-
 ![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen2_2.jpg)
 
 ![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen2_3.jpg)
