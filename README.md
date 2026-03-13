@@ -32,27 +32,27 @@ ansible-playbook -i inventory.ini site.yml
 
 
 Коды и критическая информация вынесена в скрипт с переменными окружения:
-![Начало](https://github.com/SKISHCHENKO/coursework/blob/img/screen1_0.png)
+![Начало](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen1_0.png)
 
 Запуск терраформа:
-![Терраформ](https://github.com/SKISHCHENKO/coursework/blob/img/screen1_1.png)
+![Терраформ](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen1_1.png)
 
 Успешный запуск терраформа с указанием IP
-![Терраформ](https://github.com/SKISHCHENKO/coursework/blob/img/screen1_2.png)
+![Терраформ](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen1_2.png)
 
 Запуск ansible
-![Ansible](https://github.com/SKISHCHENKO/coursework/blob/img/screen1_3.png)
+![Ansible](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen1_3.png)
 
 В YandexCloud появилась сети с подсетями и ВМ:
-![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/img/screen2_1.jpg)
+![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen2_1.jpg)
 
 В YandexCloud появилась сети с подсетями и ВМ:
-![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/img/screen2_1.jpg)
+![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen2_1.jpg)
 
-![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/img/screen2_2.jpg)
+![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen2_2.jpg)
 
-![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/img/screen2_3.jpg)
+![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen2_3.jpg)
 
 Сайт по указанному адресу открывается в броузере:
 
-![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/img/screen2_4.jpg)
+![YandexCloud](https://github.com/SKISHCHENKO/coursework/blob/main/img/screen2_4.jpg)
