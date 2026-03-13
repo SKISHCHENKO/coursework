@@ -21,13 +21,13 @@ variable "zones" {
 }
 
 variable "vpc_name" {
-  type        = string
-  default     = "ha-vpc"
+  type    = string
+  default = "ha-vpc"
 }
 
 variable "public_cidr" {
-  type        = string
-  default     = "10.10.0.0/24"
+  type    = string
+  default = "10.10.0.0/24"
 }
 
 variable "private_cidrs" {
@@ -40,18 +40,18 @@ variable "private_cidrs" {
 }
 
 variable "ssh_user" {
-  type        = string
-  default     = "ubuntu"
+  type    = string
+  default = "ubuntu"
 }
 
 variable "ssh_public_key" {
   type        = string
-  description = "Ваш публичный SSH ключ (строкой). Пример: содержимое ~/.ssh/id_rsa.pub"
+  description = "Публичный SSH ключ (строкой)"
 }
 
 variable "image_id" {
   type        = string
-  description = "ID образа (Ubuntu 22.04 / Jammy). Можно взять из каталога YC."
+  description = "ID образа (Ubuntu 22.04 / Jammy)"
 }
 
 variable "vm_platform_id" {
@@ -60,14 +60,14 @@ variable "vm_platform_id" {
 }
 
 variable "vm_resources" {
-  description = "Ресурсы ВМ (настраивайте под сервисы)"
+  description = "Ресурсы ВМ"
   type = object({
     cores  = number
     memory = number
   })
   default = {
     cores  = 2
-    memory = 4
+    memory = 2
   }
 }
 
@@ -78,9 +78,17 @@ variable "disk_size_gb" {
 
 variable "allowed_admin_cidr" {
   type        = string
-  description = "Ваш внешний IP/подсеть для доступа к bastion/grafana/kibana (например, 1.2.3.4/32)"
+  description = "Внешний IP/подсеть для доступа к bastion/grafana/kibana (например, 1.2.3.4/32)"
 }
 
-# Порты (можете поменять под свои exporters)
-variable "node_exporter_port" { type = number, default = 9100 }
-variable "nginxlog_exporter_port" { type = number, default = 4040 }
+# Порты 
+variable "node_exporter_port" {
+  type    = number
+  default = 9100
+}
+
+variable "nginxlog_exporter_port" {
+  type    = number
+  default = 4040
+}
+

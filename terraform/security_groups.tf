@@ -17,21 +17,28 @@ resource "yandex_vpc_security_group" "bastion" {
   }
 }
 
-# ALB SG: HTTP из интернета
+
 resource "yandex_vpc_security_group" "alb" {
   name       = "${local.name_prefix}-sg-alb"
   network_id = yandex_vpc_network.vpc.id
 
   ingress {
     protocol       = "TCP"
-    description    = "HTTP"
+    description    = "HTTP from internet"
     v4_cidr_blocks = ["0.0.0.0/0"]
     port           = 80
   }
 
+  ingress {
+    protocol          = "TCP"
+    description       = "ALB node health checks"
+    port              = 30080
+    predefined_target = "loadbalancer_healthchecks"
+  }
+
   egress {
     protocol       = "ANY"
-    description    = "Allow all egress"
+    description    = "Allow all egress to backends"
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 }

@@ -4,12 +4,10 @@ nginxlog_exporter_port: 4040
 
 # Prometheus scrape targets (подставите реальные private IP ваших web)
 web_targets:
-  - host: "<WEB_A_PRIVATE_IP>"
-  - host: "<WEB_B_PRIVATE_IP>"
+  - host: "10.20.0.13"
+  - host: "10.21.0.3"
 
-# Elasticsearch endpoint (private IP)
-elasticsearch_host: "<ES_PRIVATE_IP>"
+elasticsearch_host: "10.20.0.28"
 elasticsearch_port: 9200
 
-# Grafana admin password (поменяйте!)
 grafana_admin_password: "ChangeMe123!"

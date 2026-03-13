@@ -48,7 +48,7 @@ resource "yandex_compute_instance" "web" {
 
   network_interface {
     subnet_id          = yandex_vpc_subnet.private[each.key].id
-    nat                = false
+    nat                = true
     security_group_ids = [yandex_vpc_security_group.web.id]
   }
 
@@ -77,7 +77,7 @@ resource "yandex_compute_instance" "prometheus" {
 
   network_interface {
     subnet_id          = yandex_vpc_subnet.private[var.default_zone].id
-    nat                = false
+    nat                = true
     security_group_ids = [yandex_vpc_security_group.prometheus.id]
   }
 
@@ -135,7 +135,7 @@ resource "yandex_compute_instance" "elasticsearch" {
 
   network_interface {
     subnet_id          = yandex_vpc_subnet.private[var.default_zone].id
-    nat                = false
+    nat                = true
     security_group_ids = [yandex_vpc_security_group.elasticsearch.id]
   }
 

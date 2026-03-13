@@ -1,5 +1,4 @@
-# ВНИМАНИЕ: ресурсы ALB в YC имеют много нюансов (адреса, backend, target group).
-# Этот файл — каркас. Его нужно довести под вашу версию провайдера и требования.
+#  ресурсы ALB в YC имеют много нюансов (адреса, backend, target group).
 
 # Target group (включает 2 web по приватным IP)
 resource "yandex_alb_target_group" "web_tg" {
